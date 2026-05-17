@@ -156,6 +156,16 @@
 
     .masthead-text { min-width: 0; }
 
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--coral);
+      margin-bottom: 0.5rem;
+      font-weight: 400;
+    }
+
     h1 {
       font-family: var(--serif-display);
       font-weight: 400;
@@ -175,6 +185,11 @@
       font-size: 1.15rem;
       color: var(--ink-soft);
       margin: 0;
+    }
+    .subtitle .latin {
+      font-style: normal;
+      color: var(--coral);
+      font-weight: 500;
     }
 
     /* ────── INTRO PROSE ────── */
@@ -382,37 +397,53 @@
       list-style: none;
       padding: 0;
       margin: 0;
+      border-top: 1px solid var(--rule);
     }
     ol#frases li {
       counter-increment: phrase;
-      padding: 1rem 0 1rem 3.2rem;
+      display: grid;
+      grid-template-columns: 2rem 1fr 1fr;
+      gap: 1.2rem;
+      align-items: baseline;
+      padding: 0.6rem 0;
       border-bottom: 1px solid var(--rule);
-      position: relative;
-      font-size: 1.02rem;
-      color: var(--ink-soft);
     }
     ol#frases li::before {
       content: counter(phrase, decimal-leading-zero);
-      position: absolute;
-      left: 0;
-      top: 1.15rem;
       font-family: var(--mono);
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       color: var(--coral);
       letter-spacing: 0.08em;
+      align-self: center;
+    }
+    ol#frases .source {
+      font-size: 0.98rem;
+      color: var(--ink-soft);
+      line-height: 1.4;
     }
     /* The Galatac translation — display face italic, indigo, the conlang
-       gets the typographic spotlight here. */
-    ol#frases li b i {
-      display: block;
-      margin-top: 0.35rem;
+       gets the typographic spotlight via color, not size. */
+    ol#frases .galatac {
       color: var(--indigo);
       font-family: var(--serif-display);
-      font-variation-settings: "opsz" 36, "SOFT" 80, "WONK" 1;
+      font-variation-settings: "opsz" 24, "SOFT" 80, "WONK" 1;
       font-style: italic;
       font-weight: 500;
-      font-size: 1.18rem;
+      font-size: 1.02rem;
       letter-spacing: -0.005em;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 600px) {
+      ol#frases li {
+        grid-template-columns: 1.6rem 1fr;
+        gap: 0.8rem;
+        padding: 0.7rem 0;
+      }
+      ol#frases .galatac {
+        grid-column: 2;
+        margin-top: 0.2rem;
+      }
     }
 
     /* ────── PRE BLOCKS (illustrations) ────── */
@@ -450,7 +481,8 @@
     header .masthead { animation: rise 0.9s cubic-bezier(.2,.6,.2,1) 0.05s both; }
     header .intro p:nth-of-type(1) { animation: rise 0.9s cubic-bezier(.2,.6,.2,1) 0.3s both; }
     header .intro p:nth-of-type(2) { animation: rise 0.9s cubic-bezier(.2,.6,.2,1) 0.45s both; }
-    header .intro .crescendo { animation: rise 0.9s cubic-bezier(.2,.6,.2,1) 0.6s both; }
+    header .intro p:nth-of-type(3) { animation: rise 0.9s cubic-bezier(.2,.6,.2,1) 0.6s both; }
+    header .intro .crescendo { animation: rise 0.9s cubic-bezier(.2,.6,.2,1) 0.75s both; }
 
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
@@ -472,17 +504,18 @@
         <img src="https://galatac.github.io/dictionary/img/battersea1.jpg" id="logo" alt="Battersea Shield, River Thames, c. 350–50 BCE">
       </div>
       <div class="masthead-text">
+        <div class="eyebrow">A Reconstructed Tongue · MMXXVI</div>
         <h1>Galatac</h1>
-        <p class="subtitle">Modern Gaulish</p>
+        <p class="subtitle">Modern Gaulish · <span class="latin">Lingua Gallica Renata</span></p>
       </div>
     </div>
 
     <div class="intro">
-      <p class="lede">Galatac is the ancient Gaulish language, reborn for modern speakers. It is, at once, one of the oldest tongues of Europe and one of the newest. A language carried forward two millenia, and a language only just learning to speak again.</p>
-      <p>Today's Celtic languages survive only in small, endangered communities along the Atlantic edge. But the Celtic languages once held the whole of West and Central Europe, from Iberia to Anatolia. Galatac restores the missing centre.</p>
+      <p class="lede">Galatac is the ancient Gaulish language, reborn for modern speakers. It is, at once, one of the oldest tongues of Europe and one of the newest. A language carried forward two millennia, and a language only just learning to speak again.</p>
+      <p>Today's Celtic languages survive only in small, endangered communities along the Atlantic edge. But the Celtic languages once held the whole of West and Central Europe, from Iberia to Anatolia. <strong class="accent">Galatac restores the missing centre.</strong></p>
       <p>If you already speak a Celtic language, you'll spot plenty that feels familiar. If you speak Germanic or Romance, you'll recognise scattered words here and there. Fragments of an older inheritance you didn't know you had. Perhaps this is what Europe has been missing: an auxiliary tongue that belongs to none of us and to all of us, equally foreign and equally familiar, rooted not in compromise but in our own buried history.</p>
       <p class="crescendo">Galatac is a sister branch of the family.
-      <span class="turn">A sister who's been missing for a thousand years. Her belongings strewn about the house. You had forgotten her, but she is now standing in the doorway.</span>
+        <span class="turn">A sister who's been missing for a thousand years. Her belongings strewn about the house. You had forgotten her, but she is now standing in the doorway.</span>
       </p>
     </div>
   </header>
@@ -545,7 +578,7 @@
           var element = document.getElementById('frases');
           element.innerHTML = '';
           for (const i in frases) {
-              document.getElementById('frases').innerHTML += `<li>${frases[i][langISO]} <b><i>${frases[i]['galatac']}</i></b></li>`
+              document.getElementById('frases').innerHTML += `<li><span class="source">${frases[i][langISO]}</span><span class="galatac">${frases[i]['galatac']}</span></li>`
           }
       }
 
