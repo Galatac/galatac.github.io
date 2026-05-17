@@ -504,9 +504,9 @@
         <img src="https://galatac.github.io/dictionary/img/battersea1.jpg" id="logo" alt="Battersea Shield, River Thames, c. 350–50 BCE">
       </div>
       <div class="masthead-text">
-        <div class="eyebrow">A Reconstructed Tongue · MMXXVI</div>
+        <div class="eyebrow">A Reconstructed Tongue</div>
         <h1>Galatac</h1>
-        <p class="subtitle">Modern Gaulish · <span class="latin">Lingua Gallica Renata</span></p>
+        <p class="subtitle">Modern Gaulish · <span class="latin">Neogallic</span></p>
       </div>
     </div>
 
@@ -533,7 +533,7 @@
     <p><b>Nouns</b> : Oftem <mark>-a</mark> bat bu sempre. Ex. : <i>jiva, dwar, fish</i>.</p>
     <p><b>Adjectives</b> : Often <mark>-ac / -ic / -in / -id </mark>. Ex. : <i>forte, sekret-ney</i></p>
     <p><b>Adverbs</b> : Often <mark>inte + [adj]</mark>. Ex. : <i>inte nowi (newly)</i>.</p>
-    <p><b>Verbs</b> : Verb roots can end on <mark>-n, -r, -l, -m, -s, -/g/, -/ge/, -/i/, -/a/, -/wi/, diphthongs on -i, mono-syllabic verbs on -i, and one single verb on /o/</mark>. Ex. : <i>men, reti, anwi, gwei, cara</i>.</p>
+    <p><b>Verbs</b> : Verb roots can end on <mark>-n, -r, -l, -m, -s, -g, -e, -i, -a, and one single verb on /o/</mark>. Ex. : <i>men, reti, anwi, gwei, cara</i>.</p>
     <p><b>Present tense</b> : Add or swap <mark>-a</mark>. Ex. : <i>mena, reta, anwia, gweia, cara </i>.</p>
     <p><b>Present Perfect</b> : <mark>[verb root]-tu</mark>. Ex. : <i>mentu, retitu, anwitu, gweitu, caratu</i>.</p>
     <p><b>Past tense</b> <mark>re + [verb root]</mark>. Ex. : <i>re men, re reti, re anwi, re gwei, re cara</i>.</p>
@@ -557,20 +557,111 @@
   <ol id="frases"></ol>
   <script>
       var frases = {
-          '0': { 'en': 'The apple is red.', 'it': 'La mela è rossa.', 'galatac': 'Esi in aval rodu.', 'es': 'La manzana es roja.', 'ko': '사과는 빨간색이다.', 'ru': 'Яблоко красное.' },
-          '1': { 'en': 'It is John\u2019s apple.', 'it': 'È la mela di John.', 'galatac': 'Esi i aval u Ioan.', 'es': 'Es la manzana de John.', 'ko': '그것은 존의 사과다.', 'ru': 'Это яблоко Джона.' },
-          '2': { 'en': 'I give John the apple.', 'it': 'Io do la mela a John.', 'galatac': 'Roda mi in aval a Ioan.', 'es': 'Le doy la manzana a John.', 'ko': '나는 존한테 사과를 준다.', 'ru': 'Я даю Джону яблоко.' },
-          '3': { 'en': 'We give him the apple.', 'it': 'Noi gli diamo la mela.', 'galatac': 'Roda ni in aval a e.', 'es': 'Le damos la manzana.', 'ko': '우리는 존한테 사과를 준다.', 'ru': 'Мы даём ему яблоко.' },
-          '4': { 'en': 'He gives it to John.', 'it': 'Lui la/lo* dà a John.', 'galatac': 'Roda e i a Ioan.', 'es': 'Él se la da a John.', 'ko': '그는 존에게 그것을 준다.', 'ru': 'Он дает его Джону.' },
-          '5': { 'en': 'She gives it to him.', 'it': 'Lei la/lo* dà a John.', 'galatac': 'Roda si i a e.', 'es': 'Ella se la da.', 'ko': '그녀는 그에게 그것을 준다.', 'ru': 'Она дает ему.' },
-          '6': { 'en': 'Is the apple red?', 'it': 'La mela è rossa?', 'galatac': 'Esi in aval rodu?', 'es': '¿La manzana es roja?', 'ko': '사과는 빨간색인가?', 'ru': 'Яблоко красное?' },
-          '7': { 'en': 'The apples are red.', 'it': 'Le mele sono rosse.', 'galatac': 'Esi in avale rodu.', 'es': 'Las manzanas son rojas.', 'ko': '사과들은 빨간색이다.', 'ru': 'Яблоки красные.' },
-          '8': { 'en': 'I must give it to him.', 'it': 'La/lo* devo dare a lui.', 'galatac': 'Rinca mi rodi ici a e.', 'es': 'Debo dársela a él.', 'ko': '나는 그한테 그것을 줘야 한다.', 'ru': 'Я должен отдать ему.' },
-          '9': { 'en': 'I want to give it to her.', 'it': 'La/lo* voglio dare a lei.', 'galatac': 'Gwela mi rodi ici a si.', 'es': 'Quiero dársela (a ella).', 'ko': '나는 그녀에게 그것을 주고 싶다.', 'ru': 'Я хочу дать ей.' },
-          '10': { 'en': 'I\u2019m going to know tomorrow.', 'it': 'Lo saprò domani.', 'galatac': 'Gnisi mi avaru.', 'es': 'Voy a saberla mañana.', 'ko': '내일 알게 될 것이다.', 'ru': 'Я узнаю завтра.' },
-          '11': { 'en': 'I can\u2019t eat the apple.', 'it': 'Non posso/riesco a mangiare la mela.', 'galatac': 'Ne gala mi depri in aval.', 'es': 'No puedo comer la manzana.', 'ko': '나는 사과를 못 먹는다.', 'ru': 'Я не могу есть яблоко.' },
-          '12': { 'en': 'I have eaten the apple.', 'it': 'Ho mangiato la mela.', 'galatac': 'Depritu mi in aval.', 'es': 'He comido la manzana.', 'ko': '나는 사과를 먹었다.', 'ru': 'Я съел (а) яблоко.' }
-      }
+          '0': {
+              'galatac': 'Esi in aval rodu.',
+              'en':      'The apple is red.',
+              'es':      'La manzana es roja.',
+              'it':      'La mela è rossa.',
+              'ru':      'Яблоко красное.',
+              'ko':      '사과는 빨간색이다.'
+          },
+          '1': {
+              'galatac': 'Esi i aval u Ioan.',
+              'en':      'It is John\u2019s apple.',
+              'es':      'Es la manzana de John.',
+              'it':      'È la mela di John.',
+              'ru':      'Это яблоко Джона.',
+              'ko':      '그것은 존의 사과다.'
+          },
+          '2': {
+              'galatac': 'Roda mi in aval a Ioan.',
+              'en':      'I give John the apple.',
+              'es':      'Le doy la manzana a John.',
+              'it':      'Io do la mela a John.',
+              'ru':      'Я даю Джону яблоко.',
+              'ko':      '나는 존한테 사과를 준다.'
+          },
+          '3': {
+              'galatac': 'Roda ni in aval a e.',
+              'en':      'We give him the apple.',
+              'es':      'Le damos la manzana.',
+              'it':      'Noi gli diamo la mela.',
+              'ru':      'Мы даём ему яблоко.',
+              'ko':      '우리는 존한테 사과를 준다.'
+          },
+          '4': {
+              'galatac': 'Roda e i a Ioan.',
+              'en':      'He gives it to John.',
+              'es':      'Él se la da a John.',
+              'it':      'Lui la/lo* dà a John.',
+              'ru':      'Он дает его Джону.',
+              'ko':      '그는 존에게 그것을 준다.'
+          },
+          '5': {
+              'galatac': 'Roda si i a e.',
+              'en':      'She gives it to him.',
+              'es':      'Ella se la da.',
+              'it':      'Lei la/lo* dà a John.',
+              'ru':      'Она дает ему.',
+              'ko':      '그녀는 그에게 그것을 준다.'
+          },
+          '6': {
+              'galatac': 'Esi in aval rodu?',
+              'en':      'Is the apple red?',
+              'es':      '¿La manzana es roja?',
+              'it':      'La mela è rossa?',
+              'ru':      'Яблоко красное?',
+              'ko':      '사과는 빨간색인가?'
+          },
+          '7': {
+              'galatac': 'Esi in avale rodu.',
+              'en':      'The apples are red.',
+              'es':      'Las manzanas son rojas.',
+              'it':      'Le mele sono rosse.',
+              'ru':      'Яблоки красные.',
+              'ko':      '사과들은 빨간색이다.'
+          },
+          '8': {
+              'galatac': 'Rinca mi rodi ici a e.',
+              'en':      'I must give it to him.',
+              'es':      'Debo dársela a él.',
+              'it':      'La/lo* devo dare a lui.',
+              'ru':      'Я должен отдать ему.',
+              'ko':      '나는 그한테 그것을 줘야 한다.'
+          },
+          '9': {
+              'galatac': 'Gwela mi rodi ici a si.',
+              'en':      'I want to give it to her.',
+              'es':      'Quiero dársela (a ella).',
+              'it':      'La/lo* voglio dare a lei.',
+              'ru':      'Я хочу дать ей.',
+              'ko':      '나는 그녀에게 그것을 주고 싶다.'
+          },
+          '10': {
+              'galatac': 'Gnisi mi avaru.',
+              'en':      'I\u2019m going to know tomorrow.',
+              'es':      'Voy a saberla mañana.',
+              'it':      'Lo saprò domani.',
+              'ru':      'Я узнаю завтра.',
+              'ko':      '내일 알게 될 것이다.'
+          },
+          '11': {
+              'galatac': 'Ne gala mi depri in aval.',
+              'en':      'I can\u2019t eat the apple.',
+              'es':      'No puedo comer la manzana.',
+              'it':      'Non posso/riesco a mangiare la mela.',
+              'ru':      'Я не могу есть яблоко.',
+              'ko':      '나는 사과를 못 먹는다.'
+          },
+          '12': {
+              'galatac': 'Depritu mi in aval.',
+              'en':      'I have eaten the apple.',
+              'es':      'He comido la manzana.',
+              'it':      'Ho mangiato la mela.',
+              'ru':      'Я съел (а) яблоко.',
+              'ko':      '나는 사과를 먹었다.'
+          }
+      };
 
       function adjunterFrases(langISO) {
           var langs = document.getElementById('lingues')
