@@ -16,14 +16,14 @@
   <meta property="og:description" content="The ancient Gaulish language, reborn for modern speakers." />
   <meta property="og:url" content="https://galatac.github.io/" />
   <meta property="og:image" content="https://galatac.github.io/battersea-tetraskelion-medium.png" />
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#965e57">
   <meta name="msapplication-TileColor" content="#f5f0e8">
-  <meta name="theme-color" content="#f5f0e8">
+  <meta name="theme-color" content="#f5f0e8"> -->
 
   <!-- Typography:
        Display: Fraunces — contemporary serif with optical sizing and SOFT/WONK
@@ -280,7 +280,13 @@
       color: var(--ink);
     }
 
-    .intro .crescendo .turn {
+    .intro .crescendo .turn-1 {
+      display: block;
+      margin-top: 0.7rem;
+      font-style: italic;
+    }
+
+    .intro .crescendo .turn-2 {
       display: block;
       margin-top: 0.7rem;
       font-style: italic;
@@ -557,9 +563,9 @@
     <div class="intro">
       <p class="lede">Galatac is the ancient Gaulish language, reborn for modern speakers. It is, at once, one of the oldest tongues of Europe and one of the newest. A language carried forward two millennia, and a language only just learning to speak again.</p>
       <p>Today's Celtic languages survive only in small, endangered communities along the Atlantic edge. But the Celtic languages once held the whole of West and Central Europe, from Iberia to Anatolia. <strong class="accent">Galatac restores the missing centre.</strong></p>
-      <p>If you already speak a Celtic language, you'll spot plenty that feels familiar. If you speak Germanic or Romance, you'll recognise scattered words here and there. Fragments of an older inheritance you didn't know you had. Perhaps this is what Europe has been missing: an auxiliary tongue that belongs to none of us and to all of us, equally foreign and equally familiar, rooted not in compromise but in our own buried history.</p>
-      <p class="crescendo">Galatac is a sister branch of the family.
-        <span class="turn">A sister who's been missing for a thousand years. Her belongings strewn about the house. You had forgotten her, but she is now standing in the doorway.</span>
+      <p>If you already speak a Celtic language, you'll spot plenty that feels familiar. If you speak a different European language, you'll recognise scattered words here and there. Fragments of an older inheritance you didn't know you had. Perhaps this is what Europe has been missing: an auxiliary tongue that belongs to none of us and to all of us, equally foreign and equally familiar, rooted not in compromise but in our own buried history.</p>
+      <p class="crescendo">Along with Hellenic, Italic, and Germanic; Galatac represents a sister branch of the family.
+        <span class="turn-1">A sister who had been missing for a thousand years. Her belongings strewn about the house.</span> <span class="turn-2">You had nearly forgotten her, but she is now standing at the door.</span>
       </p>
     </div>
   </header>
@@ -574,19 +580,20 @@
   <h2 id="grammar" data-num="II."><a href="#grammar">Brief Grammar</a></h2>
   <div class="grammar">
     <p><b>Word order</b> : <mark>Verb</mark>-<mark>Subject</mark>-<mark>Object</mark>. Ex. : <i>Gena si gnatal</i>.</p>
-    <p><b>Nouns</b> : Oftem <mark>-a</mark> bat bu sempre. Ex. : <i>jiva, dwar, fish</i>.</p>
-    <p><b>Adjectives</b> : Often <mark>-ac / -ic / -in / -id </mark>. Ex. : <i>forte, sekret-ney</i></p>
-    <p><b>Adverbs</b> : Often <mark>inte + [adj]</mark>. Ex. : <i>inte nowi (newly)</i>.</p>
-    <p><b>Verbs</b> : Verb roots can end on <mark>-n, -r, -l, -m, -s, -g, -e, -i, -a, and one single verb on -o</mark>. Ex. : <i>men, reti, anwi, gwei, cara</i>.</p>
-    <p><b>Present tense</b> : Add or swap <mark>-a</mark>. Ex. : <i>mena, reta, anwia, gweia, cara </i>.</p>
+    <p><b>Nouns</b> : Often <mark>-a</mark> bat bu sempre. Ex. : <i>jiva, dwar, fish</i>.</p>
+    <p><b>Adjectives</b> : Often <mark>-ac / -ic / -in / -id </mark> but not always. Ex. : <i>nowi, caranac, bowin, amarcid</i></p>
+    <p><b>Adverbs</b> : Often <mark>inte + [adj]</mark>. Ex. : <i>inte nowi, inte caranac, inte bowin, inte amarcid</i>.</p>
+    <p><b>Verbs</b> : Verb roots end on <mark>-n, -r, -l, -m, -s, -g, -e, -i, -a, -o</mark>. Ex. : <i>men, reti, anwi, gwei, cara</i>.</p>
+    <p><b>Present tense</b> : Add or swap <mark>-a</mark>. Ex. : <i>mena, reta, anwia, gweia, cara</i>.</p>
     <p><b>Present Perfect</b> : <mark>[verb root]-tu</mark>. Ex. : <i>mentu, retitu, anwitu, gweitu, caratu</i>.</p>
     <p><b>Past tense</b> <mark>re + [verb root]</mark>. Ex. : <i>re men, re reti, re anwi, re gwei, re cara</i>.</p>
     <p><b>Past Perfect</b> : <mark>re + [verb root]-tu</mark>. Ex. : <i>re mentu, re retitu, re anwitu, re gweitu, re caratu</i>.</p>
     <p><b>Future tense</b> : <mark>[verb root]-si</mark>. Ex. : <i>mensi, retisi, anwisi, gweisi, carasi</i></p>
     <p><b>Conditional mood</b> : <mark>re + [verb root]-si</mark>. Ex. : <i>re mensi, re retisi, re anwisi, re gweisi, re carasi</i>.</p>
     <p><b>Past Participle</b> : <mark>-tu</mark>.</p>
+    <p><b>Negation</b> : <mark>ne + [verb phrase]</mark>. Ex. : <i>ne mena, ne reta, ne anwia, ne gweia, ne cara</i>.</p>
     <p><b>Diminutive</b> : <mark>-al</mark>. <b>Feminine</b> : <mark>-is</mark>. <b>Plural</b> : <mark>-e</mark>.</p>
-    <p>Definite article <b>in</b>. Adjectives invariable.</p>
+    <p><b>Definite article</b> : <mark>in</mark>. Adjectives invariable.</p>
     <p><b>Personal Pronouns</b> : <i>Mi, ti, (e, si, i)</i> ; Plural : <i>Ni, swi, si</i>.</p>
   </div>
 
