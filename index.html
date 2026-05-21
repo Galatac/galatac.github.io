@@ -406,6 +406,221 @@
       font-weight: 400;
     }
 
+    /* ────── SWADESH LIST ────── */
+    .swadesh-intro {
+      margin: 0 0 1.3rem;
+      color: var(--ink-soft);
+    }
+    .swadesh-frame {
+      position: relative;
+      border: 1px solid var(--rule-strong);
+      border-radius: 2px;
+      background: var(--paper-warm);
+    }
+    .swadesh-viewport { position: relative; }
+    .swadesh-clip {
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+    .swadesh-frame.collapsed .swadesh-clip { max-height: 20.5rem; }
+    table.swadesh-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      line-height: 1.3;
+    }
+    table.swadesh-table th,
+    table.swadesh-table td {
+      text-align: left;
+      padding: 0.26rem 0.7rem;
+      border-bottom: 1px solid var(--rule);
+      white-space: nowrap;
+    }
+    table.swadesh-table thead th {
+      font-size: 0.6rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--ink-faint);
+      border-bottom: 1px solid var(--rule-strong);
+      background: rgba(26, 22, 18, 0.03);
+    }
+    table.swadesh-table tbody tr:hover { background: rgba(150, 94, 87, 0.06); }
+    table.swadesh-table tbody tr:last-child td { border-bottom: none; }
+    table.swadesh-table .gloss { color: var(--ink-soft); }
+    table.swadesh-table .gal { color: var(--indigo); font-weight: 500; }
+    table.swadesh-table .cog { color: var(--ink-faint); }
+    table.swadesh-table .pie {
+      font-family: var(--serif-body);
+      font-style: italic;
+      color: var(--coral);
+    }
+    /* Fade veiling the clipped tail of the list while collapsed */
+    .swadesh-fade {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 4rem;
+      pointer-events: none;
+      background: linear-gradient(to bottom,
+        rgba(236, 228, 210, 0) 0%,
+        rgba(236, 228, 210, 1) 84%);
+    }
+    .swadesh-frame:not(.collapsed) .swadesh-fade { display: none; }
+    @media (prefers-color-scheme: dark) {
+      .swadesh-fade {
+        background: linear-gradient(to bottom,
+          rgba(28, 34, 48, 0) 0%,
+          rgba(28, 34, 48, 1) 84%);
+      }
+    }
+    .swadesh-toggle {
+      display: block;
+      width: 100%;
+      border: none;
+      border-top: 1px solid var(--rule-strong);
+      background: transparent;
+      cursor: pointer;
+      padding: 0.62rem 1rem;
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--coral);
+      transition: color 0.18s ease, background 0.18s ease;
+    }
+    .swadesh-toggle:hover {
+      color: var(--indigo);
+      background: rgba(150, 94, 87, 0.05);
+    }
+    .swadesh-toggle:focus-visible {
+      outline: 2px solid var(--coral);
+      outline-offset: -2px;
+    }
+    .swadesh-foot {
+      margin: 0.9rem 0 0;
+      font-family: var(--serif-body);
+      font-size: 0.78rem;
+      font-style: italic;
+      color: var(--ink-faint);
+    }
+
+    /* ────── SWADESH WORD TREES ────── */
+    .wtree {
+      margin: 1.1rem 0;
+      padding: 1.05rem 1.3rem 1.15rem;
+      border: 1px solid var(--rule-strong);
+      border-radius: 2px;
+      background: var(--paper-warm);
+    }
+    .wtree-gloss {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 0.6rem;
+    }
+    .wtree-root {
+      position: relative;
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+      line-height: 1.3;
+      padding: 0 0 0.5rem 0.6rem;
+    }
+    .wtree-root::after {
+      content: "";
+      position: absolute;
+      left: 0.6rem;
+      top: 1.35rem;
+      bottom: -1px;
+      border-left: 1px solid var(--rule-strong);
+    }
+    .wtree-tag {
+      font-family: var(--mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+    }
+    .wtree-root .wtree-form {
+      font-family: var(--serif-body);
+      font-style: italic;
+      font-size: 1.2rem;
+      color: var(--coral);
+    }
+    .wtree-root .wtree-sense {
+      font-family: var(--serif-body);
+      font-style: italic;
+      font-size: 0.9rem;
+      color: var(--ink-faint);
+    }
+    .wtree-kin {
+      list-style: none;
+      margin: 0;
+      padding: 0 0 0 0.6rem;
+    }
+    .wtree-leaf {
+      position: relative;
+      display: flex;
+      align-items: baseline;
+      gap: 0.7rem;
+      padding: 0.32rem 0 0.32rem 1.5rem;
+      line-height: 1.35;
+    }
+    .wtree-leaf::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      border-left: 1px solid var(--rule-strong);
+    }
+    .wtree-leaf:last-child::before { height: 0.95rem; }
+    .wtree-leaf::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.95rem;
+      width: 1.05rem;
+      border-top: 1px solid var(--rule-strong);
+    }
+    .wtree-lang {
+      flex: 0 0 4.6rem;
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+    }
+    .wtree-leaf .wtree-form {
+      font-family: var(--mono);
+      font-size: 0.95rem;
+      color: var(--ink);
+    }
+    .wtree-leaf .wtree-sense {
+      font-family: var(--serif-body);
+      font-style: italic;
+      font-size: 0.85rem;
+      color: var(--ink-faint);
+    }
+    .wtree-leaf.is-galatac .wtree-lang { color: var(--coral); }
+    .wtree-leaf.is-galatac .wtree-form {
+      color: var(--indigo);
+      font-weight: 500;
+    }
+    .swadesh-listlabel {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--coral);
+      margin: 2.4rem 0 0.9rem;
+    }
+
     /* ────── EXAMPLE PHRASES ────── */
     select {
       font-family: var(--serif-display);
@@ -570,7 +785,167 @@
     <li><span class="num">03</span><a href="https://github.com/galatac/">Github</a><span class="ext">↗</span></li>
   </ul>
 
-  <h2 id="grammar" data-num="II."><a href="#grammar">Brief Grammar</a></h2>
+  <h2 id="swadesh" data-num="II."><a href="#swadesh">Swadesh List</a></h2>
+  <p class="swadesh-intro">A Swadesh list collects a sample of core vocabulary that a language is least likely to borrow. The first few are drawn as family trees. Each Galatac word traces up to the Proto-Indo-European root it descended from, then back down to the cousins that kept that root, even where the meaning drifted. The full list follows below.</p>
+
+  <div class="wtree">
+    <div class="wtree-gloss">name</div>
+    <div class="wtree-root"><span class="wtree-tag">PIE</span><span class="wtree-form">*h₃nómn̥</span><span class="wtree-sense">name</span></div>
+    <ul class="wtree-kin">
+      <li class="wtree-leaf is-galatac"><span class="wtree-lang">Galatac</span><span class="wtree-form">anu</span><span class="wtree-sense">name</span></li>
+      <li class="wtree-leaf"><span class="wtree-lang">Latin</span><span class="wtree-form">nōmen</span><span class="wtree-sense">name</span></li>
+      <li class="wtree-leaf"><span class="wtree-lang">German</span><span class="wtree-form">Name</span><span class="wtree-sense">name</span></li>
+      <li class="wtree-leaf"><span class="wtree-lang">Greek</span><span class="wtree-form">ónoma</span><span class="wtree-sense">name</span></li>
+    </ul>
+  </div>
+
+  <div class="wtree">
+    <div class="wtree-gloss">house</div>
+    <div class="wtree-root"><span class="wtree-tag">PIE</span><span class="wtree-form">*(s)teg-</span><span class="wtree-sense">to cover</span></div>
+    <ul class="wtree-kin">
+      <li class="wtree-leaf is-galatac"><span class="wtree-lang">Galatac</span><span class="wtree-form">tei</span><span class="wtree-sense">house</span></li>
+      <li class="wtree-leaf"><span class="wtree-lang">Latin</span><span class="wtree-form">tegō</span><span class="wtree-sense">to cover</span></li>
+      <li class="wtree-leaf"><span class="wtree-lang">German</span><span class="wtree-form">Dach</span><span class="wtree-sense">roof</span></li>
+      <li class="wtree-leaf"><span class="wtree-lang">Greek</span><span class="wtree-form">stégos</span><span class="wtree-sense">roof</span></li>
+    </ul>
+  </div>
+
+  <div class="wtree">
+    <div class="wtree-gloss">bird</div>
+    <div class="wtree-root"><span class="wtree-tag">PIE</span><span class="wtree-form">*dʰubʰrós</span><span class="wtree-sense">deep</span></div>
+    <ul class="wtree-kin">
+      <li class="wtree-leaf is-galatac"><span class="wtree-lang">Galatac</span><span class="wtree-form">etan</span><span class="wtree-sense">bird</span></li>
+      <li class="wtree-leaf"><span class="wtree-lang">Latin</span><span class="wtree-form">penna</span><span class="wtree-sense">feather</span></li>
+      <li class="wtree-leaf"><span class="wtree-lang">German</span><span class="wtree-form">Feder</span><span class="wtree-sense">feather</span></li>
+      <li class="wtree-leaf"><span class="wtree-lang">Greek</span><span class="wtree-form">pterón</span><span class="wtree-sense">wing</span></li>
+    </ul>
+  </div>
+
+  <div class="wtree">
+    <div class="wtree-gloss">blood</div>
+    <div class="wtree-root"><span class="wtree-tag">PIE</span><span class="wtree-form">*krewh₂-</span><span class="wtree-sense">blood</span></div>
+    <ul class="wtree-kin">
+      <li class="wtree-leaf is-galatac"><span class="wtree-lang">Galatac</span><span class="wtree-form">cro</span><span class="wtree-sense">blood</span></li>
+      <li class="wtree-leaf"><span class="wtree-lang">Latin</span><span class="wtree-form">cruor</span><span class="wtree-sense">blood</span></li>
+      <li class="wtree-leaf"><span class="wtree-lang">German</span><span class="wtree-form">roh</span><span class="wtree-sense">raw</span></li>
+      <li class="wtree-leaf"><span class="wtree-lang">Greek</span><span class="wtree-form">kréas</span><span class="wtree-sense">meat</span></li>
+    </ul>
+  </div>
+
+  <div class="wtree">
+    <div class="wtree-gloss">day</div>
+    <div class="wtree-root"><span class="wtree-tag">PIE</span><span class="wtree-form">*dyew-</span><span class="wtree-sense">bright sky</span></div>
+    <ul class="wtree-kin">
+      <li class="wtree-leaf is-galatac"><span class="wtree-lang">Galatac</span><span class="wtree-form">diu</span><span class="wtree-sense">day</span></li>
+      <li class="wtree-leaf"><span class="wtree-lang">Latin</span><span class="wtree-form">diēs</span><span class="wtree-sense">day</span></li>
+      <li class="wtree-leaf"><span class="wtree-lang">Greek</span><span class="wtree-form">Zeús</span><span class="wtree-sense">sky god</span></li>
+    </ul>
+  </div>
+
+  <div class="wtree">
+    <div class="wtree-gloss">moon</div>
+    <div class="wtree-root"><span class="wtree-tag">PIE</span><span class="wtree-form">*lewk-</span><span class="wtree-sense">to shine</span></div>
+    <ul class="wtree-kin">
+      <li class="wtree-leaf is-galatac"><span class="wtree-lang">Galatac</span><span class="wtree-form">locan</span><span class="wtree-sense">moon</span></li>
+      <li class="wtree-leaf"><span class="wtree-lang">Latin</span><span class="wtree-form">lūna</span><span class="wtree-sense">moon</span></li>
+      <li class="wtree-leaf"><span class="wtree-lang">German</span><span class="wtree-form">Licht</span><span class="wtree-sense">light</span></li>
+      <li class="wtree-leaf"><span class="wtree-lang">Greek</span><span class="wtree-form">leukós</span><span class="wtree-sense">white</span></li>
+    </ul>
+  </div>
+
+  <div class="wtree">
+    <div class="wtree-gloss">heart</div>
+    <div class="wtree-root"><span class="wtree-tag">PIE</span><span class="wtree-form">*ḱérd-</span><span class="wtree-sense">heart</span></div>
+    <ul class="wtree-kin">
+      <li class="wtree-leaf is-galatac"><span class="wtree-lang">Galatac</span><span class="wtree-form">crid</span><span class="wtree-sense">heart</span></li>
+      <li class="wtree-leaf"><span class="wtree-lang">Latin</span><span class="wtree-form">cor</span><span class="wtree-sense">heart</span></li>
+      <li class="wtree-leaf"><span class="wtree-lang">German</span><span class="wtree-form">Herz</span><span class="wtree-sense">heart</span></li>
+      <li class="wtree-leaf"><span class="wtree-lang">Greek</span><span class="wtree-form">kardía</span><span class="wtree-sense">heart</span></li>
+    </ul>
+  </div>
+
+  <p class="swadesh-listlabel">The complete list</p>
+  <div class="swadesh-frame collapsed" id="swadesh-frame">
+    <div class="swadesh-viewport">
+      <div class="swadesh-clip">
+        <table class="swadesh-table">
+          <thead>
+            <tr>
+              <th>English</th>
+              <th>Galatac</th>
+              <th>Welsh</th>
+              <th>Irish</th>
+              <th>PIE Source</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="gloss">I</td><td class="gal">mi</td><td class="cog">mi</td><td class="cog">mé</td><td class="pie">*me-</td></tr>
+            <tr><td class="gloss">you</td><td class="gal">ti</td><td class="cog">ti</td><td class="cog">tú</td><td class="pie">*túh₂</td></tr>
+            <tr><td class="gloss">we</td><td class="gal">ni</td><td class="cog">ni</td><td class="cog">sinn</td><td class="pie">*nes-</td></tr>
+            <tr><td class="gloss">this</td><td class="gal">sin</td><td class="cog">hwn</td><td class="cog">seo</td><td class="pie">*só-</td></tr>
+            <tr><td class="gloss">that</td><td class="gal">se</td><td class="cog">hwnnw</td><td class="cog">sin</td><td class="pie">*to-</td></tr>
+            <tr><td class="gloss">who</td><td class="gal">pi</td><td class="cog">pwy</td><td class="cog">cé</td><td class="pie">*kʷis</td></tr>
+            <tr><td class="gloss">not</td><td class="gal">ne</td><td class="cog">ni</td><td class="cog">ní</td><td class="pie">*ne</td></tr>
+            <tr><td class="gloss">all</td><td class="gal">ol</td><td class="cog">oll</td><td class="cog">uile</td><td class="pie">*h₂el-</td></tr>
+            <tr><td class="gloss">many</td><td class="gal">elu</td><td class="cog">llawer</td><td class="cog">iomaí</td><td class="pie">*pelh₁u-</td></tr>
+            <tr><td class="gloss">one</td><td class="gal">on</td><td class="cog">un</td><td class="cog">aon</td><td class="pie">*óynos</td></tr>
+            <tr><td class="gloss">two</td><td class="gal">da</td><td class="cog">dau</td><td class="cog">dó</td><td class="pie">*dwóh₁</td></tr>
+            <tr><td class="gloss">three</td><td class="gal">tri</td><td class="cog">tri</td><td class="cog">trí</td><td class="pie">*tréyes</td></tr>
+            <tr><td class="gloss">big</td><td class="gal">mar</td><td class="cog">mawr</td><td class="cog">mór</td><td class="pie">*moh₁ros</td></tr>
+            <tr><td class="gloss">long</td><td class="gal">sir</td><td class="cog">hir</td><td class="cog">síor</td><td class="pie">*seh₁ro-</td></tr>
+            <tr><td class="gloss">small</td><td class="gal">mei</td><td class="cog">bach</td><td class="cog">beag</td><td class="pie">*mey-</td></tr>
+            <tr><td class="gloss">new</td><td class="gal">nowi</td><td class="cog">newydd</td><td class="cog">nua</td><td class="pie">*néwyos</td></tr>
+            <tr><td class="gloss">good</td><td class="gal">dai</td><td class="cog">da</td><td class="cog">maith</td><td class="pie">*meh₂tis</td></tr>
+            <tr><td class="gloss">red</td><td class="gal">rodu</td><td class="cog">rhudd</td><td class="cog">rua</td><td class="pie">*h₁rewdʰ-</td></tr>
+            <tr><td class="gloss">white</td><td class="gal">gwin</td><td class="cog">gwyn</td><td class="cog">fionn</td><td class="pie">*windo-</td></tr>
+            <tr><td class="gloss">black</td><td class="gal">duv</td><td class="cog">du</td><td class="cog">dubh</td><td class="pie">*dʰubʰ-</td></tr>
+            <tr><td class="gloss">man</td><td class="gal">gwir</td><td class="cog">gŵr</td><td class="cog">fear</td><td class="pie">*wiHrós</td></tr>
+            <tr><td class="gloss">woman</td><td class="gal">ben</td><td class="cog">benyw</td><td class="cog">bean</td><td class="pie">*gʷḗn</td></tr>
+            <tr><td class="gloss">dog</td><td class="gal">cun</td><td class="cog">ci</td><td class="cog">cú</td><td class="pie">*ḱwṓ</td></tr>
+            <tr><td class="gloss">bird</td><td class="gal">etan</td><td class="cog">edn</td><td class="cog">éan</td><td class="pie">*péth₂-</td></tr>
+            <tr><td class="gloss">fish</td><td class="gal">esc</td><td class="cog">pysgodyn</td><td class="cog">iasc</td><td class="pie">*peysk-</td></tr>
+            <tr><td class="gloss">egg</td><td class="gal">awi</td><td class="cog">wy</td><td class="cog">ubh</td><td class="pie">*h₂ōwyóm</td></tr>
+            <tr><td class="gloss">fire</td><td class="gal">ten</td><td class="cog">tân</td><td class="cog">tine</td><td class="pie">*tep-</td></tr>
+            <tr><td class="gloss">water</td><td class="gal">duvur</td><td class="cog">dŵr</td><td class="cog">uisce</td><td class="pie">*dʰubros</td></tr>
+            <tr><td class="gloss">sun</td><td class="gal">swel</td><td class="cog">haul</td><td class="cog">grian</td><td class="pie">*sóh₂wl̥</td></tr>
+            <tr><td class="gloss">moon</td><td class="gal">locan</td><td class="cog">lleuad</td><td class="cog">gealach</td><td class="pie">*lewk-</td></tr>
+            <tr><td class="gloss">star</td><td class="gal">stir</td><td class="cog">seren</td><td class="cog">réalta</td><td class="pie">*h₂stḗr</td></tr>
+            <tr><td class="gloss">day</td><td class="gal">diu</td><td class="cog">dydd</td><td class="cog">lá</td><td class="pie">*dyew-</td></tr>
+            <tr><td class="gloss">night</td><td class="gal">noit</td><td class="cog">nos</td><td class="cog">oíche</td><td class="pie">*nókʷts</td></tr>
+            <tr><td class="gloss">tree</td><td class="gal">pren</td><td class="cog">pren</td><td class="cog">crann</td><td class="pie">*kʷres-</td></tr>
+            <tr><td class="gloss">name</td><td class="gal">anu</td><td class="cog">enw</td><td class="cog">ainm</td><td class="pie">*h₃nómn̥</td></tr>
+            <tr><td class="gloss">head</td><td class="gal">pen</td><td class="cog">pen</td><td class="cog">ceann</td><td class="pie">-</td></tr>
+            <tr><td class="gloss">ear</td><td class="gal">clut</td><td class="cog">clust</td><td class="cog">cluas</td><td class="pie">*ḱlew-</td></tr>
+            <tr><td class="gloss">eye</td><td class="gal">derc</td><td class="cog">llygad</td><td class="cog">súil</td><td class="pie">*derḱ-</td></tr>
+            <tr><td class="gloss">mouth</td><td class="gal">genu</td><td class="cog">genau</td><td class="cog">béal</td><td class="pie">*ǵénu-</td></tr>
+            <tr><td class="gloss">tongue</td><td class="gal">tengu</td><td class="cog">tafod</td><td class="cog">teanga</td><td class="pie">*dn̥ǵʰwéh₂s</td></tr>
+            <tr><td class="gloss">tooth</td><td class="gal">dantu</td><td class="cog">dant</td><td class="cog">fiacail</td><td class="pie">*h₃dónts</td></tr>
+            <tr><td class="gloss">hand</td><td class="gal">lam</td><td class="cog">llaw</td><td class="cog">lámh</td><td class="pie">*pl̥h₂meh₂</td></tr>
+            <tr><td class="gloss">heart</td><td class="gal">crid</td><td class="cog">calon</td><td class="cog">croí</td><td class="pie">*ḱérd-</td></tr>
+            <tr><td class="gloss">blood</td><td class="gal">cro</td><td class="cog">gwaed</td><td class="cog">fuil</td><td class="pie">*krewh₂-</td></tr>
+            <tr><td class="gloss">bone</td><td class="gal">cnam</td><td class="cog">asgwrn</td><td class="cog">cnámh</td><td class="pie">*kneh₂m-</td></tr>
+            <tr><td class="gloss">foot</td><td class="gal">treg</td><td class="cog">troed</td><td class="cog">troigh</td><td class="pie">*dʰregʰ-</td></tr>
+            <tr><td class="gloss">eat</td><td class="gal">depri</td><td class="cog">bwyta</td><td class="cog">ith</td><td class="pie">*h₁ed-</td></tr>
+            <tr><td class="gloss">drink</td><td class="gal">ivi</td><td class="cog">yfed</td><td class="cog">ól</td><td class="pie">*peh₃-</td></tr>
+            <tr><td class="gloss">see</td><td class="gal">apis</td><td class="cog">gweld</td><td class="cog">feic</td><td class="pie">*kʷeys-</td></tr>
+            <tr><td class="gloss">die</td><td class="gal">marwi</td><td class="cog">marw</td><td class="cog">marbh</td><td class="pie">*mer-</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="swadesh-fade" aria-hidden="true"></div>
+    </div>
+    <button type="button" class="swadesh-toggle" id="swadesh-toggle" aria-expanded="false" aria-controls="swadesh-frame" onclick="toggleSwadesh(this)">Show all 50 words</button>
+  </div>
+  <p class="swadesh-foot">An asterisk (*) marks a reconstructed form; a dash (-), an uncertain etymology.</p>
+  <script>
+    function toggleSwadesh(btn) {
+      var collapsed = document.getElementById('swadesh-frame').classList.toggle('collapsed');
+      btn.setAttribute('aria-expanded', String(!collapsed));
+      btn.textContent = collapsed ? 'Show all 50 words' : 'Show fewer';
+    }
+  </script>
+
+  <h2 id="grammar" data-num="III."><a href="#grammar">Brief Grammar</a></h2>
   <div class="grammar">
     <p><b>Word order</b> : <mark>Verb</mark>-<mark>Subject</mark>-<mark>Object</mark>. Ex. : <i>Gena si gnatal</i>.</p>
     <p><b>Nouns</b> : No gender. Can end on any letter. Ex. : <i>caran, bow, amarc</i>.</p>
@@ -590,7 +965,7 @@
     <p><b>Negation</b> : <mark>ne + [verb phrase]</mark>. Ex. : <i>ne mena, ne reta, ne anwia, ne gweia, ne cara</i>.</p>
   </div>
 
-  <h2 id="examples" data-num="III."><a href="#examples">Example Phrases</a></h2>
+  <h2 id="examples" data-num="IV."><a href="#examples">Example Phrases</a></h2>
   <select name="lingues" id="lingues" onchange="adjunterFrases(this.value)">
       <option value="el">🇬🇷 Eladac</option>
       <option value="es">🇪🇸 Ispanac</option>
@@ -791,7 +1166,7 @@
       adjunterFrases(supported.indexOf(userISO) >= 0 ? userISO : 'en');
   </script>
 
-  <h2 id="illustrations" data-num="IV."><a href="#illustrations">Helpful Illustrations</a></h2>
+  <h2 id="illustrations" data-num="V."><a href="#illustrations">Helpful Illustrations</a></h2>
 
   <h3 id="howmuch"><a href="#howmuch">How much? / Petu?</a></h3>
 <pre style="overflow-x:scroll;">
