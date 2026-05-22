@@ -499,13 +499,6 @@
       outline: 2px solid var(--coral);
       outline-offset: -2px;
     }
-    .swadesh-foot {
-      margin: 0.9rem 0 0;
-      font-family: var(--serif-body);
-      font-size: 0.78rem;
-      font-style: italic;
-      color: var(--ink-faint);
-    }
 
     /* ────── EXAMPLE PHRASES ────── */
     select {
@@ -744,7 +737,6 @@
     </div>
     <button type="button" class="swadesh-toggle" id="swadesh-toggle" aria-expanded="false" aria-controls="swadesh-frame" onclick="toggleSwadesh(this)">Show all 50 words</button>
   </div>
-  <p class="swadesh-foot">An asterisk (*) marks a reconstructed form; a dash (-), an uncertain etymology.</p>
   <script>
     function toggleSwadesh(btn) {
       var collapsed = document.getElementById('swadesh-frame').classList.toggle('collapsed');
